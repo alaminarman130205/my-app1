@@ -1,28 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
 const number = 555;
-const singer = {name:'dr asik',job: 'singer'}
-const singer1 = {name:'jakir nayek', job:"scoller"}
+const singers = [
+    {name:'dr asik',job: 'singer'},
+    {name:'rokya',job: 'naika'},
+    {name:'habu',job: 'bua khor'},
+    {name:'jakir nayek', job:"scoller"}
+  ]
+
 const singerStyle = {
   color : 'purple', 
   backgroundColor:'green',
 }
 
 function App() {
+  const nayoks = ['rubel ', ' bapparaj', ' kubel', 'jasim', ' salman sah', ' riaz ', 'rajjak',' lallu kosai'];
   return (
+  
     <div className="App">
-      <Person name='Rubel' job='janina'></Person>
-      <Person name = 'kader' job ='songkito'></Person>
-      <Person name='jintu'job ='kosto'></Person>
-      <Person name='codna'job ='lallu nantu'></Person>
-      <h5>New Component</h5>
-      <Friend name='lallu kosai'job ='janela'></Friend>
-      <Friend name='jinga lala'job ='functional things'></Friend>
+      <h1>Dynamically Loaded data from array and object</h1>
+      {
+        nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+      {
+        singers.map(singer => <Friend name={singer.name} job={singer.job}></Friend>)
+      }
     </div>
   );
 }
+
+
 function Person(props){
-  // console.log(props);
+
   return (
 
       <div className='Person'>
@@ -32,15 +41,14 @@ function Person(props){
 
   )
 }
+
+
 function Friend(props){
   return(
     <div className='container'>
       <h3>Name {props.name}</h3>
       <p>Occapetion : {props.job}</p>
     </div>
-
-
   )
 }
-
 export default App;
