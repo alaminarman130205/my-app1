@@ -11,17 +11,34 @@ const singerStyle = {
 function App() {
   return (
     <div className="App">
-      <Person></Person>
+      <Person name='Rubel' job='janina'></Person>
+      <Person name = 'kader' job ='songkito'></Person>
+      <Person name='jintu'job ='kosto'></Person>
+      <Person name='codna'job ='lallu nantu'></Person>
+      <h5>New Component</h5>
+      <Friend name='lallu kosai'job ='janela'></Friend>
+      <Friend name='jinga lala'job ='functional things'></Friend>
     </div>
   );
 }
-function Person(){
+function Person(props){
+  // console.log(props);
   return (
 
-      <div>
-          <h1>royel bengol tiger</h1>
-          <p>this is inside the div</p>
+      <div className='Person'>
+          <h1>Name {props.name}</h1>
+          <p>Occapetion : {props.job}</p>
       </div>
+
+  )
+}
+function Friend(props){
+  return(
+    <div className='container'>
+      <h3>Name {props.name}</h3>
+      <p>Occapetion : {props.job}</p>
+    </div>
+
 
   )
 }
